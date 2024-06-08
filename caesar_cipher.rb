@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 def caesar_cipher(string, shift_factor)
   upcase_alphabet = ('A'..'Z').to_a
   downcase_alphabet = ('a'..'z').to_a
 
-  characters = string.split('').map.with_index do |char, char_index|
+  characters = string.chars.map.with_index do |char, _char_index|
     if upcase_alphabet.include?(char)
       # I find the index of the char in the upcase_alphabet array and shift
       # Using the % operator, I can wrap around the array
@@ -16,10 +18,10 @@ def caesar_cipher(string, shift_factor)
     end
   end
 
-  characters.join('') # ciphered string is returned
+  characters.join # ciphered string is returned
 end
 
-p caesar_cipher("What a string!", 5) # => "Bmfy f xywnsl!"
+p caesar_cipher('What a string!', 5) # => "Bmfy f xywnsl!"
 
 # Input string
 # Output string
@@ -33,9 +35,9 @@ p caesar_cipher("What a string!", 5) # => "Bmfy f xywnsl!"
 # Split string into characters
 # Iterate through characters
 # If character is in alphabet then shift by shift_factor
-    # if alphabet array includes character
-    # find the index of character in alphabet array
-    # add shift_factor to index and find the character in that index
-    # return character of that index
+# if alphabet array includes character
+# find the index of character in alphabet array
+# add shift_factor to index and find the character in that index
+# return character of that index
 
 # return the characters ciphered as one string using String#join

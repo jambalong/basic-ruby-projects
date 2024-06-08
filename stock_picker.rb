@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def stock_picker(stock_prices)
   max_profit = 0
   best_days = []
@@ -17,8 +19,7 @@ def stock_picker(stock_prices)
   best_days
 end
 
-
-p stock_picker([17,3,6,9,15,8,6,1,10]) #  => [1,4]  
+p stock_picker([17, 3, 6, 9, 15, 8, 6, 1, 10]) #  => [1,4]
 # for a max_profit of $15 - $3 == $12\
 
 # Input is array
@@ -31,8 +32,8 @@ p stock_picker([17,3,6,9,15,8,6,1,10]) #  => [1,4]
 # Iterate through stock_prices at current day + 1 upto last day
 # Assign buy_price (already as block variable) and sell_price (using array[index])
 # Calculate the profit: sell_price - buy_price
-   # If profit is greater than current profit
-      # Assign current profit = profit
-      # Assign best day = [buy_day, sell_day]
+# If profit is greater than current profit
+# Assign current profit = profit
+# Assign best day = [buy_day, sell_day]
 
 # Return best day as array
